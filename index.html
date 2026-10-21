@@ -21,7 +21,10 @@
       line-height: 1.6;
     }
 
+
+    /* ===================== */
     /* Navigation */
+    /* ===================== */
 
     nav {
       width: 100%;
@@ -60,7 +63,9 @@
     }
 
 
+    /* ===================== */
     /* Main page */
+    /* ===================== */
 
     main {
       max-width: 960px;
@@ -69,16 +74,18 @@
     }
 
 
-    /* Intro */
+    /* ===================== */
+    /* Introduction */
+    /* ===================== */
 
     .intro {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 55px;
       margin-bottom: 75px;
     }
 
-    .portrait {
+    .profile {
       width: 245px;
       flex-shrink: 0;
     }
@@ -90,24 +97,45 @@
       display: block;
     }
 
-    .intro-text {
-      flex: 1;
+    .profile-name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 17px;
+      margin-bottom: 8px;
+      color: #222;
     }
 
-    .intro-text h1 {
-      font-size: 34px;
-      font-weight: 500;
-      margin-top: 0;
-      margin-bottom: 20px;
+    .profile-info {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .profile-info a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .profile-info a:hover {
+      color: #1b4f8a;
+      text-decoration: underline;
+    }
+
+    .intro-text {
+      flex: 1;
+      padding-top: 2px;
     }
 
     .intro-text p {
       font-size: 16px;
-      margin: 10px 0;
+      margin-top: 0;
+      margin-bottom: 16px;
     }
 
 
+    /* ===================== */
     /* Sections */
+    /* ===================== */
 
     h2 {
       font-size: 27px;
@@ -135,7 +163,7 @@
     }
 
     .paper-links {
-      margin: 7px 0 12px 0;
+      margin: 7px 0 8px 0;
     }
 
     .paper-links a {
@@ -144,15 +172,41 @@
       font-weight: 500;
     }
 
-    .abstract {
-      font-size: 15px;
-      text-align: justify;
-      margin-top: 10px;
-    }
-
     a {
       color: #1b4f8a;
     }
+
+
+    /* ===================== */
+    /* Collapsible abstracts */
+    /* ===================== */
+
+    .abstract {
+      margin-top: 8px;
+      font-size: 15px;
+    }
+
+    .abstract summary {
+      cursor: pointer;
+      color: #1b4f8a;
+      font-weight: 500;
+      display: inline-block;
+      list-style-position: outside;
+    }
+
+    .abstract summary:hover {
+      text-decoration: underline;
+    }
+
+    .abstract-text {
+      margin-top: 10px;
+      text-align: justify;
+    }
+
+
+    /* ===================== */
+    /* Footer */
+    /* ===================== */
 
     footer {
       border-top: 1px solid #ddd;
@@ -163,7 +217,9 @@
     }
 
 
+    /* ===================== */
     /* Mobile */
+    /* ===================== */
 
     @media (max-width: 700px) {
 
@@ -182,29 +238,40 @@
       .intro {
         flex-direction: column;
         align-items: flex-start;
-        gap: 25px;
+        gap: 30px;
       }
 
-      .portrait {
+      .profile {
         width: 190px;
       }
 
-      .intro-text h1 {
-        font-size: 30px;
+      .profile-name {
+        font-size: 19px;
       }
 
-      .abstract {
+      .profile-info {
+        font-size: 14px;
+      }
+
+      .abstract-text {
         text-align: left;
       }
     }
 
   </style>
+
 </head>
 
 
 <body>
 
+
+<!-- ===================== -->
+<!-- NAVIGATION -->
+<!-- ===================== -->
+
 <nav>
+
   <div class="nav-container">
 
     <div class="site-name">
@@ -212,18 +279,26 @@
     </div>
 
     <div class="nav-links">
+
       <a href="/">Home</a>
+
       <a href="#research">Research</a>
 
-      <!-- Replace this with your CV link -->
-      <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf" target="_blank">CV</a>
+      <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf"
+         target="_blank">
+        CV
+      </a>
+
     </div>
 
   </div>
+
 </nav>
 
 
+
 <main>
+
 
   <!-- ===================== -->
   <!-- INTRODUCTION -->
@@ -231,13 +306,47 @@
 
   <section class="intro">
 
-    <div class="portrait">
-      <img src="portrait.JPG" alt="Yanzun Yang">
+
+    <!-- LEFT COLUMN -->
+
+    <div class="profile">
+
+      <div class="portrait">
+        <img src="portrait.JPG" alt="Yanzun Yang">
+      </div>
+
+      <div class="profile-name">
+        Yanzun Yang (杨琰尊)
+      </div>
+
+      <div class="profile-info">
+
+        <div>
+          Toronto, Canada
+        </div>
+
+        <div>
+          <a href="mailto:yanzun.yang@mail.utoronto.ca">
+            Email
+          </a>
+        </div>
+
+        <div>
+          <a href="www.linkedin.com/in/yanzun-yang-346534375"
+             target="_blank">
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="intro-text">
 
-      <h1>Yanzun Yang (杨琰尊)</h1>
+
+    <!-- RIGHT COLUMN -->
+
+    <div class="intro-text">
 
       <p>
         Welcome!
@@ -258,15 +367,11 @@
       </p>
 
       <p>
-        You can find my
-        <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf" target="_blank">CV here</a>.
-      </p>
-
-      <p>
-        Email:
-        <a href="mailto:yanzun.yang@mail.utoronto.ca">
-          yanzun.yang@mail.utoronto.ca
-        </a>
+        You can find my CV
+        <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf"
+           target="_blank">
+           here
+        </a>.
       </p>
 
     </div>
@@ -281,10 +386,14 @@
 
   <section id="research">
 
+
     <h2>Working Papers</h2>
 
 
+
+    <!-- ===================== -->
     <!-- JMP -->
+    <!-- ===================== -->
 
     <div class="paper">
 
@@ -311,16 +420,47 @@
 
       </div>
 
-      <div class="abstract">
-        <strong>Abstract:</strong>
-        Temporary labor market conditions at arrival may have lasting consequences for immigrants' economic integration. I study this question using Canadian administrative data linking immigrant landing records to annual tax returns and employer information. To identify unexpected labor market conditions that are plausibly orthogonal to immigrant selection, I exploit provincial initial unemployment rate (IUR) shocks, defined as the difference between realized and predicted unemployment rates at arrival. A one percentage point increase in the IUR shock reduces employment by 1.7 percentage points and annual earnings by 6.5 percent upon arrival; these effects remain statistically significant for five and six years, respectively. Employer linkages show that immigrants initially work at firms with lower wage premiums, which account for 13 percent of the initial earnings penalty, and then partly recover through increased mobility toward higher-paying firms. Adverse entry conditions also induce interprovincial mobility. Observed switchers fare better than stayers, but Lee bounds accounting for treatment-induced mobility are too wide to determine whether this difference reflects adjustment or selection. Employment and earnings losses are significantly smaller for economic immigrants than for family-sponsored immigrants and refugees. I find no evidence that access to larger pre-existing enclaves mitigates either employment or earnings losses for family-sponsored immigrants. Finally, parents' exposure to adverse entry conditions reduces their children's adult earnings, providing evidence of intergenerational scarring.
 
-      </div>
+      <details class="abstract">
+
+        <summary>Abstract</summary>
+
+        <div class="abstract-text">
+
+          Temporary labor market conditions at arrival may have lasting consequences
+          for immigrants' economic integration. I study this question using Canadian
+          administrative data linking immigrant landing records to annual tax returns
+          and employer information. To identify unexpected labor market conditions
+          that are plausibly orthogonal to immigrant selection, I exploit provincial
+          initial unemployment rate (IUR) shocks, defined as the difference between
+          realized and predicted unemployment rates at arrival. A one percentage point
+          increase in the IUR shock reduces employment by 1.7 percentage points and
+          annual earnings by 6.5 percent upon arrival; these effects remain statistically
+          significant for five and six years, respectively. Employer linkages show that
+          immigrants initially work at firms with lower wage premiums, which account
+          for 13 percent of the initial earnings penalty, and then partly recover through
+          increased mobility toward higher-paying firms. Adverse entry conditions also
+          induce interprovincial mobility. Observed switchers fare better than stayers,
+          but Lee bounds accounting for treatment-induced mobility are too wide to
+          determine whether this difference reflects adjustment or selection.
+          Employment and earnings losses are significantly smaller for economic
+          immigrants than for family-sponsored immigrants and refugees. I find no
+          evidence that access to larger pre-existing enclaves mitigates either
+          employment or earnings losses for family-sponsored immigrants. Finally,
+          parents' exposure to adverse entry conditions reduces their children's adult
+          earnings, providing evidence of intergenerational scarring.
+
+        </div>
+
+      </details>
 
     </div>
 
 
+
+    <!-- ===================== -->
     <!-- International Students -->
+    <!-- ===================== -->
 
     <div class="paper">
 
@@ -330,10 +470,13 @@
       </div>
 
       <div class="paper-meta">
+
         with
-        <a href="https://mingyu-chen.com/" target="_blank">
+        <a href="https://mingyu-chen.com/"
+           target="_blank">
           Mingyu Chen
         </a>
+
       </div>
 
       <div class="paper-links">
@@ -345,15 +488,36 @@
 
       </div>
 
-      <div class="abstract">
-        <strong>Abstract:</strong>
-        Between 2003 and 2016, international enrollment in US higher education nearly doubled. We examine how trade shocks in education affect public universities' decision-making. We construct a shift-share instrument to exploit institutions' historical networks with different origins of international students, income growth, and exchange-rate fluctuations. Contrary to claims that US-born students are crowded out, we find that international students increase schools' funding via tuition payments, which leads to increased in-state enrollment and lower tuition prices. Schools also keep steady per-student spending and recruit more students with high math and verbal scores. Lastly, states allocate more appropriations to (research) universities that attract fewer international students.
-      </div>
+
+      <details class="abstract">
+
+        <summary>Abstract</summary>
+
+        <div class="abstract-text">
+
+          Between 2003 and 2016, international enrollment in US higher education
+          nearly doubled. We examine how trade shocks in education affect public
+          universities' decision-making. We construct a shift-share instrument to
+          exploit institutions' historical networks with different origins of
+          international students, income growth, and exchange-rate fluctuations.
+          Contrary to claims that US-born students are crowded out, we find that
+          international students increase schools' funding via tuition payments,
+          which leads to increased in-state enrollment and lower tuition prices.
+          Schools also keep steady per-student spending and recruit more students
+          with high math and verbal scores. Lastly, states allocate more appropriations
+          to (research) universities that attract fewer international students.
+
+        </div>
+
+      </details>
 
     </div>
 
 
+
+    <!-- ===================== -->
     <!-- Intermarriage -->
+    <!-- ===================== -->
 
     <div class="paper">
 
@@ -365,18 +529,44 @@
         Presented at the Canadian Economics Association Annual Meeting (2026)
       </div>
 
-      <div class="abstract">
-        <strong>Abstract:</strong>
-        Intermarriage with native-born individuals may facilitate immigrants' economic integration through access to host-country networks and information. However, identifying its causal effects is challenging due to endogenous marriage decisions. Using Canada's Longitudinal Immigration Database, I combine exact matching with modern event study methods to estimate the dynamic effects of intermarriage and within-immigrant marriage. I find that both marriage types lead to substantial employment and earnings losses, particularly among women, with little evidence of an additional intermarriage premium. This finding generally holds across immigrant subgroups, including those expected to benefit most from host-country networks and information. Moreover, immigrants married to higher-earning spouses experience larger earnings declines, consistent with household income effects and specialization. Overall, the results suggest that intermarriage provides limited additional labor market benefits relative to within-immigrant marriage, while household-level mechanisms may play an important role in shaping immigrants' economic outcomes following marriage.
-      </div>
+
+      <details class="abstract">
+
+        <summary>Abstract</summary>
+
+        <div class="abstract-text">
+
+          Intermarriage with native-born individuals may facilitate immigrants'
+          economic integration through access to host-country networks and information.
+          However, identifying its causal effects is challenging due to endogenous
+          marriage decisions. Using Canada's Longitudinal Immigration Database,
+          I combine exact matching with modern event study methods to estimate the
+          dynamic effects of intermarriage and within-immigrant marriage. I find that
+          both marriage types lead to substantial employment and earnings losses,
+          particularly among women, with little evidence of an additional intermarriage
+          premium. This finding generally holds across immigrant subgroups, including
+          those expected to benefit most from host-country networks and information.
+          Moreover, immigrants married to higher-earning spouses experience larger
+          earnings declines, consistent with household income effects and specialization.
+          Overall, the results suggest that intermarriage provides limited additional
+          labor market benefits relative to within-immigrant marriage, while
+          household-level mechanisms may play an important role in shaping immigrants'
+          economic outcomes following marriage.
+
+        </div>
+
+      </details>
 
     </div>
 
 
 
+    <!-- ===================== -->
     <!-- Work in Progress -->
+    <!-- ===================== -->
 
     <h2>Work in Progress</h2>
+
 
     <div class="paper">
 
@@ -384,21 +574,49 @@
         The Impacts of Artificial Intelligence on Occupations
       </div>
 
-      <div class="abstract">
-        <strong>Abstract:</strong>
-        Complementarity matters for the impacts of AI on occupations. AI possesses the potential to enhance the productivity of certain tasks while automating others. Leveraging a commonly used measure of occupational AI exposure, I create an innovative metric for occupational exposure to AI complementarity. This metric is derived by aggregating the AI exposure of coworkers, identified through China's online job posting data. Results indicate that exposure to AI correlates with a notable decline in occupational hiring growth between 2015 and 2019, a period marked by the widespread adoption of AI, signifying a pronounced displacement effect. Interestingly, occupations complemented by AI demonstrate growth in both wage and hiring. The skill level of the occupation and the capacity of firms to adopt AI emerge as pivotal factors influencing the impact of AI on jobs. Notably, both AI-exposed and AI-complemented jobs undergo significant changes in skill requirements following the AI surge.
-      </div>
+
+      <details class="abstract">
+
+        <summary>Abstract</summary>
+
+        <div class="abstract-text">
+
+          Complementarity matters for the impacts of AI on occupations. AI possesses
+          the potential to enhance the productivity of certain tasks while automating
+          others. Leveraging a commonly used measure of occupational AI exposure,
+          I create an innovative metric for occupational exposure to AI complementarity.
+          This metric is derived by aggregating the AI exposure of coworkers, identified
+          through China's online job posting data. Results indicate that exposure to AI
+          correlates with a notable decline in occupational hiring growth between 2015
+          and 2019, a period marked by the widespread adoption of AI, signifying a
+          pronounced displacement effect. Interestingly, occupations complemented by AI
+          demonstrate growth in both wage and hiring. The skill level of the occupation
+          and the capacity of firms to adopt AI emerge as pivotal factors influencing
+          the impact of AI on jobs. Notably, both AI-exposed and AI-complemented jobs
+          undergo significant changes in skill requirements following the AI surge.
+
+        </div>
+
+      </details>
 
     </div>
 
+
   </section>
 
+
+
+  <!-- ===================== -->
+  <!-- FOOTER -->
+  <!-- ===================== -->
 
   <footer>
     © 2026 Yanzun Yang
   </footer>
 
+
 </main>
 
 </body>
+
 </html>
