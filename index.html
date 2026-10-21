@@ -1,27 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Yanzun Yang</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+
+    nav {
+      width: 100%;
+      border-bottom: 1px solid #e4e4e4;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-name a {
+      font-size: 21px;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #1b4f8a;
+    }
+
+
+    /* Main page */
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 65px 30px 80px 30px;
+    }
+
+
+    /* Intro */
+
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 55px;
+      margin-bottom: 75px;
+    }
+
+    .portrait {
+      width: 245px;
+      flex-shrink: 0;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .intro-text {
+      flex: 1;
+    }
+
+    .intro-text h1 {
+      font-size: 34px;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .intro-text p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+
+    /* Sections */
+
+    h2 {
+      font-size: 27px;
+      font-weight: 500;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    .paper {
+      margin-bottom: 45px;
+    }
+
+    .paper-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .paper-meta {
+      font-size: 14px;
+      color: #555;
+      margin: 4px 0;
+    }
+
+    .paper-links {
+      margin: 7px 0 12px 0;
+    }
+
+    .paper-links a {
+      margin-right: 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .abstract {
+      font-size: 15px;
+      text-align: justify;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #1b4f8a;
+    }
+
+    footer {
+      border-top: 1px solid #ddd;
+      margin-top: 80px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #777;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+
+      .nav-container {
+        padding: 14px 18px;
+      }
+
+      .nav-links a {
+        margin-left: 15px;
+      }
+
+      main {
+        padding: 40px 20px 60px 20px;
+      }
+
+      .intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+      }
+
+      .portrait {
+        width: 190px;
+      }
+
+      .intro-text h1 {
+        font-size: 30px;
+      }
+
+      .abstract {
+        text-align: left;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <h1>Yanzun Yang</h1>
+<nav>
+  <div class="nav-container">
 
-  <p>
-    I am a PhD candidate in Economics at the University of Toronto.
-  </p>
+    <div class="site-name">
+      <a href="/">Yanzun Yang</a>
+    </div>
 
-  <p>
-    My research interests are in labor economics, the economics of migration,
-    and the economics of AI.
-  </p>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="#research">Research</a>
 
-  <p>
-    I am on the 2026–2027 job market.
-  </p>
+      <!-- Replace this with your CV link -->
+      <a href="https://drive.google.com/file/d/1XoLtf1VSxIom1Tf1ZLis9P806D7QRTLD/view?usp=sharing" target="_blank">CV</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<main>
+
+  <!-- ===================== -->
+  <!-- INTRODUCTION -->
+  <!-- ===================== -->
+
+  <section class="intro">
+
+    <div class="portrait">
+      <img src="portrait.jpg" alt="Yanzun Yang">
+    </div>
+
+    <div class="intro-text">
+
+      <h1>Yanzun Yang (杨琰尊)</h1>
+
+      <p>
+        Welcome!
+      </p>
+
+      <p>
+        I am a PhD candidate in Economics at the University of Toronto.
+      </p>
+
+      <p>
+        My research interests are in labor economics, the economics of migration,
+        and the economics of AI. My current research studies the long-term effects
+        of economic downturns on new immigrants.
+      </p>
+
+      <p>
+        <strong>I am on the 2026–2027 job market.</strong>
+      </p>
+
+      <p>
+        You can find my
+        <a href="https://drive.google.com/file/d/1XoLtf1VSxIom1Tf1ZLis9P806D7QRTLD/view?usp=sharing" target="_blank">CV here</a>.
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:yanzun.yang@mail.utoronto.ca">
+          yanzun.yang@mail.utoronto.ca
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================== -->
+  <!-- RESEARCH -->
+  <!-- ===================== -->
+
+  <section id="research">
+
+    <h2>Working Papers</h2>
+
+
+    <!-- JMP -->
+
+    <div class="paper">
+
+      <div class="paper-title">
+        The Impact of Arriving During Recessions on Immigrant Integration:
+        Evidence from Canada
+      </div>
+
+      <div class="paper-meta">
+        <strong>Job Market Paper</strong>
+      </div>
+
+      <div class="paper-meta">
+        Presented at the Canadian Economics Association Annual Meeting (2025)
+        and the Chinese Economists Society North America Annual Conference (2026)
+      </div>
+
+      <div class="paper-links">
+
+        <a href="https://github.com/yanzunyang9/JMP/blob/main/JMP_draft_1011.pdf"
+           target="_blank">
+          [Paper]
+        </a>
+
+      </div>
+
+      <div class="abstract">
+        <strong>Abstract:</strong>
+        Temporary labor market conditions at arrival may have lasting consequences for immigrants' economic integration. I study this question using Canadian administrative data linking immigrant landing records to annual tax returns and employer information. To identify unexpected labor market conditions that are plausibly orthogonal to immigrant selection, I exploit provincial initial unemployment rate (IUR) shocks, defined as the difference between realized and predicted unemployment rates at arrival. A one percentage point increase in the IUR shock reduces employment by 1.7 percentage points and annual earnings by 6.5 percent upon arrival; these effects remain statistically significant for five and six years, respectively. Employer linkages show that immigrants initially work at firms with lower wage premiums, which account for 13 percent of the initial earnings penalty, and then partly recover through increased mobility toward higher-paying firms. Adverse entry conditions also induce interprovincial mobility. Observed switchers fare better than stayers, but Lee bounds accounting for treatment-induced mobility are too wide to determine whether this difference reflects adjustment or selection. Employment and earnings losses are significantly smaller for economic immigrants than for family-sponsored immigrants and refugees. I find no evidence that access to larger pre-existing enclaves mitigates either employment or earnings losses for family-sponsored immigrants. Finally, parents' exposure to adverse entry conditions reduces their children's adult earnings, providing evidence of intergenerational scarring.
+
+      </div>
+
+    </div>
+
+
+    <!-- International Students -->
+
+    <div class="paper">
+
+      <div class="paper-title">
+        The Impact of International Students on US Colleges:
+        Higher Education as a Service Export
+      </div>
+
+      <div class="paper-meta">
+        with
+        <a href="https://mingyu-chen.com/" target="_blank">
+          Mingyu Chen
+        </a>
+      </div>
+
+      <div class="paper-links">
+
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3859798"
+           target="_blank">
+          [Paper]
+        </a>
+
+      </div>
+
+      <div class="abstract">
+        <strong>Abstract:</strong>
+        Between 2003 and 2016, international enrollment in US higher education nearly doubled. We examine how trade shocks in education affect public universities' decision-making. We construct a shift-share instrument to exploit institutions' historical networks with different origins of international students, income growth, and exchange-rate fluctuations. Contrary to claims that US-born students are crowded out, we find that international students increase schools' funding via tuition payments, which leads to increased in-state enrollment and lower tuition prices. Schools also keep steady per-student spending and recruit more students with high math and verbal scores. Lastly, states allocate more appropriations to (research) universities that attract fewer international students.
+      </div>
+
+    </div>
+
+
+    <!-- Intermarriage -->
+
+    <div class="paper">
+
+      <div class="paper-title">
+        Marriage Type and Immigrant Integration: Evidence from Canada
+      </div>
+
+      <div class="paper-meta">
+        Presented at the Canadian Economics Association Annual Meeting (2026)
+      </div>
+
+      <div class="abstract">
+        <strong>Abstract:</strong>
+        Intermarriage with native-born individuals may facilitate immigrants' economic integration through access to host-country networks and information. However, identifying its causal effects is challenging due to endogenous marriage decisions. Using Canada's Longitudinal Immigration Database, I combine exact matching with modern event study methods to estimate the dynamic effects of intermarriage and within-immigrant marriage. I find that both marriage types lead to substantial employment and earnings losses, particularly among women, with little evidence of an additional intermarriage premium. This finding generally holds across immigrant subgroups, including those expected to benefit most from host-country networks and information. Moreover, immigrants married to higher-earning spouses experience larger earnings declines, consistent with household income effects and specialization. Overall, the results suggest that intermarriage provides limited additional labor market benefits relative to within-immigrant marriage, while household-level mechanisms may play an important role in shaping immigrants' economic outcomes following marriage.
+      </div>
+
+    </div>
+
+
+
+    <!-- Work in Progress -->
+
+    <h2>Work in Progress</h2>
+
+    <div class="paper">
+
+      <div class="paper-title">
+        The Impacts of Artificial Intelligence on Occupations
+      </div>
+
+      <div class="abstract">
+        <strong>Abstract:</strong>
+        Complementarity matters for the impacts of AI on occupations. AI possesses the potential to enhance the productivity of certain tasks while automating others. Leveraging a commonly used measure of occupational AI exposure, I create an innovative metric for occupational exposure to AI complementarity. This metric is derived by aggregating the AI exposure of coworkers, identified through China's online job posting data. Results indicate that exposure to AI correlates with a notable decline in occupational hiring growth between 2015 and 2019, a period marked by the widespread adoption of AI, signifying a pronounced displacement effect. Interestingly, occupations complemented by AI demonstrate growth in both wage and hiring. The skill level of the occupation and the capacity of firms to adopt AI emerge as pivotal factors influencing the impact of AI on jobs. Notably, both AI-exposed and AI-complemented jobs undergo significant changes in skill requirements following the AI surge.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 Yanzun Yang
+  </footer>
+
+</main>
 
 </body>
 </html>
