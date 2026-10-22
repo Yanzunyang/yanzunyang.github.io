@@ -23,10 +23,15 @@
     </svg>'
   >
 
+
   <style>
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -38,9 +43,9 @@
     }
 
 
-    /* ===================== */
+    /* ================================================== */
     /* Navigation */
-    /* ===================== */
+    /* ================================================== */
 
     nav {
       width: 100%;
@@ -55,6 +60,7 @@
       max-width: 1050px;
       margin: 0 auto;
       padding: 18px 30px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -67,39 +73,87 @@
       text-decoration: none;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
     .nav-links a {
-      margin-left: 28px;
+      position: relative;
+
       color: #333;
       text-decoration: none;
       font-size: 15px;
+      font-weight: 400;
+
+      padding-bottom: 5px;
     }
 
-    .nav-links a:hover {
-      color: #1b4f8a;
+    /* underline animation */
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 2px;
+
+      background-color: #333;
+
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* active navigation */
+
+    .nav-links a.active {
+      font-weight: 700;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
     }
 
 
-    /* ===================== */
+    /* ================================================== */
     /* Main page */
-    /* ===================== */
+    /* ================================================== */
 
     main {
-      max-width: 960px;
+      max-width: 1050px;
       margin: 0 auto;
-      padding: 65px 30px 80px 30px;
+
+      padding:
+        65px
+        30px
+        25px
+        30px;
     }
 
 
-    /* ===================== */
+    /* ================================================== */
     /* Introduction */
-    /* ===================== */
+    /* ================================================== */
 
     .intro {
+
       display: flex;
       align-items: flex-start;
+
       gap: 55px;
+
       margin-bottom: 75px;
     }
+
+
+    /* Profile */
 
     .profile {
       width: 245px;
@@ -109,17 +163,24 @@
     .portrait img {
       width: 100%;
       height: auto;
+
       border-radius: 2px;
+
       display: block;
     }
 
     .profile-name {
       font-size: 20px;
       font-weight: 600;
+
       margin-top: 17px;
       margin-bottom: 14px;
+
       color: #222;
     }
+
+
+    /* Profile information */
 
     .profile-info {
       font-size: 15px;
@@ -127,16 +188,22 @@
     }
 
     .profile-row {
+
       display: flex;
       align-items: center;
+
       gap: 9px;
+
       margin-bottom: 9px;
     }
 
     .profile-row svg {
+
       width: 18px;
       height: 18px;
+
       flex-shrink: 0;
+
       fill: #555;
     }
 
@@ -154,6 +221,9 @@
       fill: #0a66c2 !important;
     }
 
+
+    /* About me */
+
     .intro-text {
       flex: 1;
       padding-top: 2px;
@@ -161,6 +231,7 @@
 
     .intro-text p {
       font-size: 16px;
+
       margin-top: 0;
       margin-bottom: 16px;
     }
@@ -174,18 +245,39 @@
     }
 
 
-    /* ===================== */
-    /* Sections */
-    /* ===================== */
+    /* ================================================== */
+    /* Research sections */
+    /* ================================================== */
+
+    #research {
+      scroll-margin-top: 90px;
+    }
+
+
+    /*
+       Working Papers / Work in Progress headings
+
+       The line now stretches across the full width
+       of the content area.
+    */
 
     h2 {
+
+      width: 100%;
+
       font-size: 27px;
       font-weight: 500;
+
       margin-top: 60px;
       margin-bottom: 30px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #d8d8d8;
+
+      padding-bottom: 9px;
+
+      border-bottom: 1px solid #d5d5d5;
     }
+
+
+    /* Papers */
 
     .paper {
       margin-bottom: 45px;
@@ -194,12 +286,14 @@
     .paper-title {
       font-size: 18px;
       font-weight: 600;
+
       margin-bottom: 5px;
     }
 
     .paper-meta {
       font-size: 14px;
       color: #555;
+
       margin: 4px 0;
     }
 
@@ -208,7 +302,9 @@
     }
 
     .paper-links a {
+
       margin-right: 12px;
+
       text-decoration: none;
       font-weight: 500;
     }
@@ -218,54 +314,86 @@
     }
 
 
-    /* ===================== */
+    /* ================================================== */
     /* Collapsible abstracts */
-    /* ===================== */
+    /* ================================================== */
 
     .abstract {
+
       margin-top: 9px;
+
       font-size: 15px;
     }
 
     .abstract summary {
+
       cursor: pointer;
+
       color: #333;
+
       font-weight: 500;
-      display: list-item;
+
       width: fit-content;
     }
 
+    /*
+       Browser automatically gives:
+       ▶ when closed
+       ▼ when opened
+    */
+
     .abstract summary::marker {
+
       color: #555;
+
       font-size: 1em;
     }
 
     .abstract summary:hover {
-      color: #222;
+      color: #000;
     }
 
     .abstract-text {
+
       margin-top: 10px;
+
       text-align: justify;
     }
 
 
-    /* ===================== */
+    /* ================================================== */
     /* Footer */
-    /* ===================== */
+    /* ================================================== */
 
     footer {
-      border-top: 1px solid #ddd;
-      margin-top: 80px;
-      padding-top: 20px;
+
+      width: 100%;
+
+      margin-top: 30px;
+
       font-size: 13px;
       color: #777;
     }
 
+    .footer-container {
 
-    /* ===================== */
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      padding:
+        18px
+        30px
+        24px
+        30px;
+
+      border-top: 1px solid #d5d5d5;
+    }
+
+
+    /* ================================================== */
     /* Mobile */
-    /* ===================== */
+    /* ================================================== */
 
     @media (max-width: 700px) {
 
@@ -273,17 +401,29 @@
         padding: 14px 18px;
       }
 
+      .nav-links {
+        gap: 16px;
+      }
+
       .nav-links a {
-        margin-left: 15px;
+        font-size: 14px;
       }
 
       main {
-        padding: 40px 20px 60px 20px;
+
+        padding:
+          40px
+          20px
+          20px
+          20px;
       }
 
       .intro {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 30px;
       }
 
@@ -302,6 +442,16 @@
       .abstract-text {
         text-align: left;
       }
+
+      .footer-container {
+
+        padding:
+          16px
+          20px
+          22px
+          20px;
+      }
+
     }
 
   </style>
@@ -309,26 +459,40 @@
 </head>
 
 
+
 <body>
 
 
-<!-- ===================== -->
+<!-- ================================================== -->
 <!-- NAVIGATION -->
-<!-- ===================== -->
+<!-- ================================================== -->
 
 <nav>
 
   <div class="nav-container">
 
+
     <div class="site-name">
-      <a href="/">Yanzun Yang</a>
+
+      <a href="/">
+        Yanzun Yang
+      </a>
+
     </div>
+
 
     <div class="nav-links">
 
-      <a href="/">Home</a>
+      <a href="#home"
+         id="nav-home"
+         class="active">
+        Home
+      </a>
 
-      <a href="#research">Research</a>
+      <a href="#research"
+         id="nav-research">
+        Research
+      </a>
 
       <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf"
          target="_blank">
@@ -337,45 +501,83 @@
 
     </div>
 
+
   </div>
 
 </nav>
 
 
 
+<!-- ================================================== -->
+<!-- MAIN -->
+<!-- ================================================== -->
+
 <main>
 
 
-  <!-- ===================== -->
+  <!-- ================================================== -->
   <!-- INTRODUCTION -->
-  <!-- ===================== -->
+  <!-- ================================================== -->
 
-  <section class="intro">
+  <section
+    id="home"
+    class="intro"
+  >
 
 
     <!-- LEFT COLUMN -->
 
     <div class="profile">
 
+
+      <!-- Portrait -->
+
       <div class="portrait">
-        <img src="portrait.JPG" alt="Yanzun Yang">
+
+        <img
+          src="portrait.JPG"
+          alt="Yanzun Yang"
+        >
+
       </div>
 
+
+      <!-- Name -->
 
       <div class="profile-name">
+
         Yanzun Yang (杨琰尊)
+
       </div>
 
+
+      <!-- Profile info -->
 
       <div class="profile-info">
 
 
-        <!-- University of Toronto -->
+        <!-- University -->
 
         <div class="profile-row">
 
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="
+              M12 2
+              C8.13 2 5 5.13 5 9
+              c0 5.25 7 13 7 13
+              s7-7.75 7-13
+              c0-3.87-3.13-7-7-7
+              zm0 9.5
+              A2.5 2.5 0 1 1 12 6
+              a2.5 2.5 0 0 1 0 5.5z
+              "
+            />
+
           </svg>
 
           <span>
@@ -385,12 +587,36 @@
         </div>
 
 
+
         <!-- Email -->
 
         <div class="profile-row">
 
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="
+              M20 4H4
+              a2 2 0 0 0-2 2
+              v12
+              a2 2 0 0 0 2 2
+              h16
+              a2 2 0 0 0 2-2
+              V6
+              a2 2 0 0 0-2-2
+              zm0 4
+              -8 5
+              -8-5
+              V6
+              l8 5
+              8-5
+              v2z
+              "
+            />
+
           </svg>
 
           <a href="mailto:yanzun.yang@mail.utoronto.ca">
@@ -400,19 +626,56 @@
         </div>
 
 
+
         <!-- LinkedIn -->
 
         <div class="profile-row">
 
-          <svg class="linkedin-icon"
-               viewBox="0 0 24 24"
-               aria-hidden="true">
-            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.1 20.45H3.54V9H7.1v11.45z"/>
+          <svg
+            class="linkedin-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="
+              M20.45 20.45
+              h-3.56
+              v-5.57
+              c0-1.33-.03-3.04-1.85-3.04
+              -1.85 0-2.14 1.45-2.14 2.94
+              v5.67
+              H9.34
+              V9
+              h3.42
+              v1.56
+              h.05
+              c.48-.9 1.64-1.85 3.37-1.85
+              3.6 0 4.27 2.37 4.27 5.46
+              v6.28
+              z
+
+              M5.32 7.43
+              a2.07 2.07 0 1 1 0-4.14
+              2.07 2.07 0 0 1 0 4.14
+              z
+
+              M7.1 20.45
+              H3.54
+              V9
+              H7.1
+              v11.45
+              z
+              "
+            />
+
           </svg>
 
-          <a href="https://www.linkedin.com/in/yanzun-yang-346534375"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/yanzun-yang-346534375"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </a>
 
@@ -429,87 +692,128 @@
 
     <div class="intro-text">
 
+
       <p>
         Welcome!
       </p>
+
 
       <p>
         I am a PhD candidate in Economics at the University of Toronto.
       </p>
 
+
       <p>
-        My research interests are in labor economics, the economics of migration,
-        and the economics of AI. My current research studies the long-term effects
+        My research interests are in labor economics,
+        the economics of migration,
+        and the economics of AI.
+        My current research studies the long-term effects
         of economic downturns on new immigrants.
       </p>
 
-      <p>
-        <strong>I am on the 2026–2027 job market.</strong>
-      </p>
 
       <p>
-        I received a Bachelor of Science in Statistics from Fudan University in 2020.
+        <strong>
+          I am on the 2026–2027 job market.
+        </strong>
       </p>
 
+
       <p>
+        I received a Bachelor of Science in Statistics
+        from Fudan University in 2020.
+      </p>
+
+
+      <p>
+
         You can find my CV
-        <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf"
-           target="_blank">here</a>.
+
+        <a
+          href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf"
+          target="_blank"
+        >here</a>.
+
       </p>
+
 
       <p class="contact-line">
-        <strong>Contact:</strong>
+
+        <strong>
+          Contact:
+        </strong>
+
         <a href="mailto:yanzun.yang@mail.utoronto.ca">
           yanzun.yang@mail.utoronto.ca
         </a>
+
       </p>
 
+
     </div>
+
 
   </section>
 
 
 
-  <!-- ===================== -->
+  <!-- ================================================== -->
   <!-- RESEARCH -->
-  <!-- ===================== -->
+  <!-- ================================================== -->
 
   <section id="research">
 
 
-    <h2>Working Papers</h2>
+    <!-- ================================================== -->
+    <!-- WORKING PAPERS -->
+    <!-- ================================================== -->
+
+    <h2>
+      Working Papers
+    </h2>
 
 
 
-    <!-- ===================== -->
+    <!-- ================================================== -->
     <!-- JMP -->
-    <!-- ===================== -->
+    <!-- ================================================== -->
 
     <div class="paper">
 
+
       <div class="paper-title">
+
         The Impact of Arriving During Recessions on Immigrant Integration:
         Evidence from Canada
+
       </div>
 
-      <div class="paper-meta">
-        <strong>Job Market Paper</strong>
-      </div>
 
       <div class="paper-meta">
+
+        <strong>
+          Job Market Paper
+        </strong>
+
+      </div>
+
+
+      <div class="paper-meta">
+
         Presented at the Canadian Economics Association Annual Meeting (2025)
         and the Chinese Economists Society North America Annual Conference (2026)
+
       </div>
 
-      <div class="paper-links">
 
-        
-      </div>
 
 
       <details class="abstract">
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
+
 
         <div class="abstract-text">
 
@@ -538,46 +842,62 @@
 
         </div>
 
+
       </details>
+
 
     </div>
 
 
 
-    <!-- ===================== -->
-    <!-- International Students -->
-    <!-- ===================== -->
+    <!-- ================================================== -->
+    <!-- INTERNATIONAL STUDENTS -->
+    <!-- ================================================== -->
 
     <div class="paper">
 
+
       <div class="paper-title">
+
         The Impact of International Students on US Colleges:
         Higher Education as a Service Export
+
       </div>
+
 
       <div class="paper-meta">
 
         with
-        <a href="https://mingyu-chen.com/"
-           target="_blank">
+
+        <a
+          href="https://mingyu-chen.com/"
+          target="_blank"
+        >
           Mingyu Chen
         </a>
 
       </div>
 
+
       <div class="paper-links">
 
-        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3859798"
-           target="_blank">
+        <a
+          href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3859798"
+          target="_blank"
+        >
           [Paper]
         </a>
 
       </div>
 
 
+
       <details class="abstract">
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
+
 
         <div class="abstract-text">
 
@@ -595,30 +915,43 @@
 
         </div>
 
+
       </details>
+
 
     </div>
 
 
 
-    <!-- ===================== -->
-    <!-- Intermarriage -->
-    <!-- ===================== -->
+    <!-- ================================================== -->
+    <!-- INTERMARRIAGE -->
+    <!-- ================================================== -->
 
     <div class="paper">
 
+
       <div class="paper-title">
-        Marriage Type and Immigrant Integration: Evidence from Canada
+
+        Marriage Type and Immigrant Integration:
+        Evidence from Canada
+
       </div>
 
+
       <div class="paper-meta">
+
         Presented at the Canadian Economics Association Annual Meeting (2026)
+
       </div>
+
 
 
       <details class="abstract">
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
+
 
         <div class="abstract-text">
 
@@ -641,49 +974,64 @@
 
         </div>
 
+
       </details>
+
 
     </div>
 
 
 
-    <!-- ===================== -->
-    <!-- Work in Progress -->
-    <!-- ===================== -->
+    <!-- ================================================== -->
+    <!-- WORK IN PROGRESS -->
+    <!-- ================================================== -->
 
-    <h2>Work in Progress</h2>
+    <h2>
+      Work in Progress
+    </h2>
+
 
 
     <div class="paper">
 
+
       <div class="paper-title">
+
         The Impacts of Artificial Intelligence on Occupations
+
       </div>
+
 
 
       <details class="abstract">
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
+
 
         <div class="abstract-text">
 
-          Complementarity matters for the impacts of AI on occupations. AI possesses
-          the potential to enhance the productivity of certain tasks while automating
-          others. Leveraging a commonly used measure of occupational AI exposure,
-          I create an innovative metric for occupational exposure to AI complementarity.
-          This metric is derived by aggregating the AI exposure of coworkers, identified
-          through China's online job posting data. Results indicate that exposure to AI
-          correlates with a notable decline in occupational hiring growth between 2015
-          and 2019, a period marked by the widespread adoption of AI, signifying a
-          pronounced displacement effect. Interestingly, occupations complemented by AI
-          demonstrate growth in both wage and hiring. The skill level of the occupation
-          and the capacity of firms to adopt AI emerge as pivotal factors influencing
-          the impact of AI on jobs. Notably, both AI-exposed and AI-complemented jobs
-          undergo significant changes in skill requirements following the AI surge.
+          Complementarity matters for the impacts of AI on occupations.
+          AI possesses the potential to enhance the productivity of certain tasks
+          while automating others. Leveraging a commonly used measure of occupational
+          AI exposure, I create an innovative metric for occupational exposure to AI
+          complementarity. This metric is derived by aggregating the AI exposure of
+          coworkers, identified through China's online job posting data. Results indicate
+          that exposure to AI correlates with a notable decline in occupational hiring
+          growth between 2015 and 2019, a period marked by the widespread adoption of AI,
+          signifying a pronounced displacement effect. Interestingly, occupations
+          complemented by AI demonstrate growth in both wage and hiring. The skill level
+          of the occupation and the capacity of firms to adopt AI emerge as pivotal
+          factors influencing the impact of AI on jobs. Notably, both AI-exposed and
+          AI-complemented jobs undergo significant changes in skill requirements
+          following the AI surge.
 
         </div>
 
+
       </details>
+
 
     </div>
 
@@ -691,17 +1039,84 @@
   </section>
 
 
-
-  <!-- ===================== -->
-  <!-- FOOTER -->
-  <!-- ===================== -->
-
-  <footer>
-    © 2026 Yanzun Yang
-  </footer>
-
-
 </main>
+
+
+
+<!-- ================================================== -->
+<!-- FOOTER -->
+<!-- ================================================== -->
+
+<footer>
+
+  <div class="footer-container">
+
+    © 2026 Yanzun Yang
+
+  </div>
+
+</footer>
+
+
+
+<!-- ================================================== -->
+<!-- ACTIVE NAVIGATION -->
+<!-- ================================================== -->
+
+<script>
+
+  const homeLink =
+    document.getElementById("nav-home");
+
+  const researchLink =
+    document.getElementById("nav-research");
+
+  const researchSection =
+    document.getElementById("research");
+
+
+  function updateNavigation() {
+
+    const researchTop =
+      researchSection.getBoundingClientRect().top;
+
+    /*
+      Once Research approaches the navigation bar,
+      Research becomes active.
+    */
+
+    if (researchTop <= 130) {
+
+      homeLink.classList.remove("active");
+
+      researchLink.classList.add("active");
+
+    }
+
+    else {
+
+      researchLink.classList.remove("active");
+
+      homeLink.classList.add("active");
+
+    }
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateNavigation
+  );
+
+  window.addEventListener(
+    "load",
+    updateNavigation
+  );
+
+
+</script>
+
 
 </body>
 
