@@ -249,7 +249,7 @@
     /* Research sections */
     /* ================================================== */
 
-    #research {
+    #research, #teaching {
       scroll-margin-top: 90px;
     }
 
@@ -360,6 +360,36 @@
       text-align: justify;
     }
 
+
+    /* ================================================== */
+    /* Teaching */
+    /* ================================================== */
+
+    .teaching-affiliation {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 18px;
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 820px;
+    }
+
+    .course-list li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+      padding: 9px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+    }
+
+    .course-code {
+      font-weight: 600;
+    }
 
     /* ================================================== */
     /* Footer */
@@ -481,6 +511,11 @@
       <a href="#research"
          id="nav-research">
         Research
+      </a>
+
+      <a href="#teaching"
+         id="nav-teaching">
+        Teaching
       </a>
 
       <a href="https://yanzunyang.github.io/files/Yanzun_Yang_CV.pdf"
@@ -791,6 +826,18 @@
 
       </div>
 
+      
+      <div class="paper-links">
+
+        <a
+          href="https://www.yanzunyang.com/files/Yanzun_Yang_JMP.pdf"
+          target="_blank"
+        >
+          [Paper]
+        </a>
+
+      </div>
+
 
 
 
@@ -803,28 +850,18 @@
 
         <div class="abstract-text">
 
-          Temporary labor market conditions at arrival may have lasting consequences
-          for immigrants' economic integration. I study this question using Canadian
-          administrative data linking immigrant landing records to annual tax returns
-          and employer information. To identify unexpected labor market conditions
-          that are plausibly orthogonal to immigrant selection, I exploit provincial
-          initial unemployment rate (IUR) shocks, defined as the difference between
-          realized and predicted unemployment rates at arrival. A one percentage point
-          increase in the IUR shock reduces employment by 1.7 percentage points and
-          annual earnings by 6.5 percent upon arrival; these effects remain statistically
-          significant for five and six years, respectively. Employer linkages show that
-          immigrants initially work at firms with lower wage premiums, which account
-          for 13 percent of the initial earnings penalty, and then partly recover through
-          increased mobility toward higher-paying firms. Adverse entry conditions also
-          induce interprovincial mobility. Observed switchers fare better than stayers,
-          but Lee bounds accounting for treatment-induced mobility are too wide to
-          determine whether this difference reflects adjustment or selection.
-          Employment and earnings losses are significantly smaller for economic
-          immigrants than for family-sponsored immigrants and refugees. I find no
-          evidence that access to larger pre-existing enclaves mitigates either
-          employment or earnings losses for family-sponsored immigrants. Finally,
-          parents' exposure to adverse entry conditions reduces their children's adult
-          earnings, providing evidence of intergenerational scarring.
+          Temporary labor market conditions at arrival may have lasting consequences for immigrants' economic integration. 
+          I study this question using Canadian administrative data that link immigrant landing records to tax returns and
+          employer information. To identify unexpected labor market conditions that are plausibly orthogonal to immigrant
+          selection, I exploit provincial initial unemployment rate (IUR) shocks, defined as the difference between realized
+          unemployment rates at arrival and their one-year-ahead predictions. A one percentage point (p.p.) increase in the 
+          shock reduces employment by 1.7 p.p. and annual earnings by 6.5\% upon arrival, with effects remaining significant
+          for five and six years, respectively. Employer linkages show that affected immigrants initially work at firms with
+          lower wage premiums and partly recover through moving to higher-paying firms. Adverse entry conditions also 
+          increase interprovincial mobility. Observed switchers experience smaller losses than stayers, although Lee bounds
+          accounting for treatment-induced mobility cannot distinguish adjustment from selection. Economic immigrants are 
+          significantly less affected than family-sponsored immigrants and refugees. Finally, parents' exposure to adverse 
+          entry conditions reduces their children's adult income, providing evidence of intergenerational scarring.
 
         </div>
 
@@ -1025,6 +1062,27 @@
   </section>
 
 
+  <!-- ================================================== -->
+  <!-- TEACHING -->
+  <!-- ================================================== -->
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p class="teaching-affiliation">Teaching Assistant, University of Toronto</p>
+    <ul class="course-list">
+      <li><span class="course-code">ECO200</span><span>Microeconomic Theory</span></li>
+      <li><span class="course-code">ECO220</span><span>Introduction to Data Analysis and Applied Econometrics</span></li>
+      <li><span class="course-code">ECO204</span><span>Microeconomic Theory and Applications (for Commerce)</span></li>
+      <li><span class="course-code">ECO310</span><span>Empirical Industrial Organization</span></li>
+      <li><span class="course-code">ECO353</span><span>Special Topics in Economics (Empirical Industrial Organization)</span></li>
+      <li><span class="course-code">ECO102</span><span>Principles of Macroeconomics</span></li>
+      <li><span class="course-code">ECO326</span><span>Game Theory</span></li>
+      <li><span class="course-code">ECO206</span><span>Economics Theory</span></li>
+      <li><span class="course-code">ECO370</span><span>Economics of Organizations</span></li>
+    </ul>
+  </section>
+
+
 </main>
 
 
@@ -1057,8 +1115,14 @@
   const researchLink =
     document.getElementById("nav-research");
 
+  const teachingLink =
+    document.getElementById("nav-teaching");
+
   const researchSection =
     document.getElementById("research");
+
+  const teachingSection =
+    document.getElementById("teaching");
 
 
   function updateNavigation() {
@@ -1066,25 +1130,19 @@
     const researchTop =
       researchSection.getBoundingClientRect().top;
 
-    /*
-      Once Research approaches the navigation bar,
-      Research becomes active.
-    */
+    const teachingTop =
+      teachingSection.getBoundingClientRect().top;
 
-    if (researchTop <= 130) {
+    homeLink.classList.remove("active");
+    researchLink.classList.remove("active");
+    teachingLink.classList.remove("active");
 
-      homeLink.classList.remove("active");
-
+    if (teachingTop <= 130) {
+      teachingLink.classList.add("active");
+    } else if (researchTop <= 130) {
       researchLink.classList.add("active");
-
-    }
-
-    else {
-
-      researchLink.classList.remove("active");
-
+    } else {
       homeLink.classList.add("active");
-
     }
 
   }
